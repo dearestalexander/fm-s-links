@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github Repository](https://github.com/dearestalexander/s-links)
-- Live Site URL: [Github Pages Live View](https://dearestalexander.github.io/s-links/)
+- Solution URL: [Github Repository](https://github.com/dearestalexander/fm-s-links)
+- Live Site URL: [Github Pages Live View](https://dearestalexander.github.io/fm-s-links/)
 
 ## My process
 
