@@ -27,8 +27,10 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop screenshot](/s-link-desktop.png)
-![Mobile screenshot](/s-link-mobile.png)
+![Desktop screenshot](/s-link-desktop-jessica.png)
+![Desktop screenshot](/s-link-desktop-alexander.png)
+![Mobile screenshot](/s-link-mobile-jessica.png)
+![Mobile screenshot](/s-link-mobile-alexander.png)
 
 ### Links
 
@@ -43,10 +45,20 @@ Users should be able to:
   - CSS variables
   - CSS flexbox (as always lol)
   - CSS @media for width adjustment for mobile
+- JavaScript
+  - To toggle between different styles for the template vs. my own profile.
 
 ### What I learned
 
+On the template:
+
 I did some additional reading on variable fonts following on with from the last exercise. I was interested in the rational of providing variable fonts and static fonts. I considered adding references to both with @font-face and using the static fonts as a back-up. But I realised that this makes the use of variable fonts redundant as we don't save anything in terms of file download optimisation. I suppose you could just use one style of static font to replace multiple style usages of a variable font. But perhaps in real life it's better to just use standard fonts as a back up for failed variable font download.
+
+On adding my own variant:
+
+The style changes are fairly minor. Just color, image etc. However, I had some struggles with precedence in JavaScript. It took me a while to realise that if you have a style with an id as the selector then to toggle by class to a different style it won't work with just the class, you need to toggle to id.class to beat the id precedence. Coming out of this I feel like I have a better understanding of precedence and inheritence.
+
+I also hadn't realised that getElementByClassName returns a live collection, this caused some problems with my attempt to loop through the links, until I realised it's better to use querySelectorAll which returns a static nodelist.
 
 ### Continued development
 

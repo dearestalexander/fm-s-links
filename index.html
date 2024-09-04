@@ -8,13 +8,17 @@
   <title>Frontend Mentor | Social links profile</title>
 </head>
 <body>
-  <main>
+  <main class="main-class">
+    <div id="styles-btns">
+      <button id="original-btn" class=btn type="button">original</button>
+      <button id="alternate-btn" class=btn type="button">alternate</button>
+    </div>
     <section id="social-links-frame">
       <img 
         id="headshot" 
         src="assets/images/avatar-jessica.jpeg" 
         alt="headshot of Jessica Randall" >
-      <h1>Jessica Randall</h1>
+      <h1 id="name">Jessica Randall</h1>
       <p id="location">London, United Kingdom</p>
       <p id="bio">"Front-end developer and avid reader."</p>
       <a href="" class="social-link" id="link-github">GitHub</a>
@@ -24,9 +28,10 @@
       <a href="" class="social-link" id="link-instagram">Instagram</a>
     </section>
   </main>
-  <div class="attribution">
+  <div id="attribution" class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://www.alexroan.com">Alexander Roan</a>.
   </div>
+  <script src="./script.js"></script>
 </body>
 </html>
