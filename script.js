@@ -1,11 +1,11 @@
-const originalBtn = document.getElementById('original-btn');
-const alternateBtn = document.getElementById('alternate-btn');
-const authorSocialLinksFrame = document.getElementById('social-links-frame');
-const authorName = document.getElementById('name');
-const authorLocation = document.getElementById('location');
-const authorBio = document.getElementById('bio');
-const pageAttribution = document.getElementById('attribution');
-const authorHeadshot = document.getElementById('headshot');
+const altDesignCheckbox = document.getElementById('js-optioninput');
+const optionDescription = document.getElementById('js-option-description');
+const authorSocialLinksFrame = document.getElementById('js-frame');
+const authorHeadshot = document.getElementById('js-headshot');
+const authorName = document.getElementById('js-name');
+const authorLocation = document.getElementById('js-location');
+const authorBio = document.getElementById('js-bio');
+const pageAttribution = document.getElementById('js-attribution');
 
 
 let originalName = authorName.textContent;
@@ -16,54 +16,58 @@ const newName = "Alexander Roan";
 const newLocation = "Bangkok, Thailand";
 const newBio = `"Consultant, photographer and noob coder!"`
 
-
-originalBtn.addEventListener("click", () => {
-  authorName.textContent = originalName;
-  authorLocation.innerHTML = originalLocation;
-  authorBio.textContent = originalBio;
-
-  document.body.classList.remove("body-alt");
-
-  authorSocialLinksFrame.classList.remove("social-links-frame-alt");
-
-  authorHeadshot.src="assets/images/avatar-jessica.jpeg"
-  authorName.classList.remove("name-alt");
-  authorLocation.classList.remove("location-alt");
-  authorBio.classList.remove("bio-alt");
-
-  const authorSocialLink = document.querySelectorAll('.social-link-alt');  
-  authorSocialLink.forEach((el) => {
-    el.classList.remove("social-link-alt");
-    el.classList.add("social-link");
-  });
-
-  pageAttribution.classList.remove("attribution-alt");
+window.addEventListener("load", () => {
+  altDesignCheckbox.checked = false;
 })
 
-alternateBtn.addEventListener("click", () => {
-  authorName.textContent = newName;
-  authorLocation.innerHTML = newLocation;
-  authorBio.textContent = newBio;
+altDesignCheckbox.addEventListener("input", () => {
 
-  document.body.classList.add("body-alt");
+  if (altDesignCheckbox.checked === true) {
+    authorName.textContent = newName;
+    authorLocation.innerHTML = newLocation;
+    authorBio.textContent = newBio;
 
-  authorSocialLinksFrame.classList.add("social-links-frame-alt");
+    document.body.classList.add("body--alt");
+
+    optionDescription.classList.add("options__description--alt");
+
+    authorSocialLinksFrame.classList.add("frame--alt");
+    
+    authorHeadshot.src="assets/images/avatar-alexander.jpeg"
+    authorName.classList.add("frame__name--alt");
+    authorLocation.classList.add("frame__location--alt");
+    authorBio.classList.add("frame__bio--alt");
+
+    const authorSocialLink = document.querySelectorAll('.js-link');  
+    console.log(authorSocialLink)
+    authorSocialLink.forEach((el) => {
+      el.classList.add("frame__link--alt");
+    });
+
+    pageAttribution.classList.add("attribution--alt");
+  }
   
-  authorHeadshot.src="assets/images/avatar-alexander.jpeg"
-  authorName.classList.add("name-alt");
-  authorLocation.classList.add("location-alt");
-  authorBio.classList.add("bio-alt");
+  if (altDesignCheckbox.checked === false) {
+    authorName.textContent = originalName;
+    authorLocation.innerHTML = originalLocation;
+    authorBio.textContent = originalBio;
 
-  const authorSocialLink = document.querySelectorAll('.social-link');  
-  authorSocialLink.forEach((el) => {
-    el.classList.remove("social-link");
-    el.classList.add("social-link-alt");
-  });
+    document.body.classList.remove("body--alt");
 
-  pageAttribution.classList.add("attribution-alt");
-});
+    optionDescription.classList.remove("options__description--alt");
 
+    authorSocialLinksFrame.classList.remove("frame--alt");
 
+    authorHeadshot.src="assets/images/avatar-jessica.jpeg"
+    authorName.classList.remove("frame__name--alt");
+    authorLocation.classList.remove("frame__location--alt");
+    authorBio.classList.remove("frame__bio--alt");
 
-
-
+    const authorSocialLink = document.querySelectorAll('.js-link');  
+    authorSocialLink.forEach((el) => {
+      el.classList.remove("frame__link--alt");
+    });
+    
+    pageAttribution.classList.remove("attribution--alt");
+  }
+})
